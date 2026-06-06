@@ -1,0 +1,160 @@
+.app {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.weather {
+    width: 100%;
+    background: linear-gradient(167deg, #389196, 4.7%, #007991, 95.98%, #389196);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: system-ui;
+    padding: 80px 200px;
+}
+
+/* .form {
+
+    height: 40px;
+    background: #fff;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    margin: 30px 20px 10px;
+
+}
+
+.form__input {
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 10px;
+    color: rgb(0, 0, 0);
+}
+
+input:focus {
+    outline: none;
+}
+
+.form__btn {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+
+} */
+
+.app-title {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.weather__info {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+
+.weather-content {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.weather__img {
+    width: 200px;
+}
+
+.weather__temp {
+    font-size: 120px;
+}
+
+.weather-details-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.weather__details {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.details__img {
+    height: 100px;
+}
+
+.weather__info-container {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+}
+
+.details__value {}
+
+.details__title {}
+
+/* .weather__img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+.weather__temp {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 56px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.weather__city {
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 38px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.weather-details-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather__details {
+    display: flex;
+}
+
+.weather__info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.details__img {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+}
+
+.details__value {
+    font-weight: 300;
+    font-style: Light;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.details__title {
+    font-weight: 300;
+    font-style: Light;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+} */

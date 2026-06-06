@@ -7,6 +7,7 @@
     <title>Зона</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/weather.css">
 </head>
 
 <body>
@@ -48,11 +49,55 @@
                         <blockquote class="card-content-cit">«Всех сгною!!!»</blockquote>
                     </div>
 
-                    
+
                 </div>
             </section>
         </div>
+        <section class="app">
+
+            <div class="weather">
+                <!-- <form action="" class="form" id="form">
+                        <input type="text" class="form__input" placeholder="Enter city name">
+                        <button class="form__btn">
+                            <img src="./img/weather/search-line.svg" alt="Search">
+                        </button>
+                    </form> -->
+                <h1 class="app-title">Погода на зоне</h1>
+                
+                <div class="weather-content">
+
+                    <div class="weather__info">
+                        <img src="./img/weather/drizzle.png" alt="Weather" class="weather__img">
+                        <div class="weather__temp">22°c</div>
+                        <!-- <div class="weather__city">Moscow</div> -->
+                    </div>
+
+                    <div class="weather-details-container">
+                        <div class="weather__details">
+                            <img src="./img/weather/vlaj.svg" alt="" class="details__img">
+                            <div class="weather__info-container">
+                                <div class="details__value" id="humidity">50%</div>
+                                <div class="details__title">Humidity</div>
+                            </div>
+                        </div>
+
+                        <div class="weather__details">
+                            <img src="./img/weather/wind.svg" alt="" class="details__img">
+                            <div class="weather__info-container">
+                                <div class="details__value" id="speed">10 km/h</div>
+                                <div class="details__title">Wind Speed</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+        </section>
+        </div>
     </main>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
