@@ -342,4 +342,18 @@ select {
     .bio-img-container {
         width: 100%;
     }
+
+    .video-container {
+        min-height: 220px;
+        border-radius: 22px;
+    }
+
+    .video-button {
+        width: 64px;
+        height: 64px;
+    }
+
+    .btn-icon {
+        width: 28px;
+    }
 }
