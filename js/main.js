@@ -19,6 +19,15 @@ async function submitHandler(e) {
     };
 
     renderWeatherData(weatherData);
+
+    const weatherMessage = document.querySelector('.weather-message-text');
+    const weatherMessageImg = document.querySelector('.koj');
+
+
+    if (weatherData.temp >= 20) {
+        weatherMessage.innerText = 'На улице тепло. Но кожанку все равно наденьте!';
+        weatherMessageImg.src = './img/weather/koj-warm.png';
+    }
 }
 
 // async function getGeo (name) {
@@ -47,12 +56,120 @@ function renderWeatherData(data) {
     humidity.innerText = data.humidity + '%';
     speed.innerText = data.speed + ' km/h';
 
-    
+
     const fileNames = {
         'Clouds': 'clouds',
         'Clear': 'clear',
         'Rain': 'rain'
     }
 
-    img.src = `./img/weather/${fileNames[data.main]}.png`
+    img.src = `./img/weather/${fileNames[data.main]}.png`;
 }
+
+/* VIDEO */
+
+const video = document.querySelector('.video');
+const overlay = document.querySelector('.overlay');
+const videoButton = document.querySelector('.video-button');
+const btnIcon = document.querySelector('.btn-icon');
+
+const videoContainer = document.querySelector('.video-container');
+
+// ensure overlay is visible by default on page load
+if (overlay) overlay.classList.remove('hidden');
+
+function toggleOverlay(event) {
+    if (event.type === 'mouseleave') {
+        overlay.classList.add('hidden');
+
+    } else {
+        overlay.classList.remove('hidden');
+    }
+}
+
+// overlay should be visible by default and stay until playback starts.
+// When video is playing, enable hover behaviour (show on enter, hide on leave).
+let _vcEnter = null;
+let _vcLeave = null;
+
+function enableHoverWhilePlaying() {
+    if (!videoContainer) return;
+    // remove previous handlers if any
+    disableHoverWhilePlaying();
+    _vcEnter = () => overlay.classList.remove('hidden');
+    _vcLeave = () => overlay.classList.add('hidden');
+    videoContainer.addEventListener('mouseenter', _vcEnter);
+    videoContainer.addEventListener('mouseleave', _vcLeave);
+    // hide overlay immediately when playback starts
+    if (overlay) overlay.classList.add('hidden');
+}
+
+function disableHoverWhilePlaying() {
+    if (!videoContainer) return;
+    if (_vcEnter) videoContainer.removeEventListener('mouseenter', _vcEnter);
+    if (_vcLeave) videoContainer.removeEventListener('mouseleave', _vcLeave);
+    _vcEnter = null; _vcLeave = null;
+    // ensure overlay is visible when not playing
+    if (overlay) overlay.classList.remove('hidden');
+}
+
+// Initialize: overlay visible by default (handled earlier). Ensure hover handlers are off.
+disableHoverWhilePlaying();
+
+videoButton.addEventListener('click', function () {
+
+    if (video.paused) {
+        video.play();
+        btnIcon.src = "./img/pause-white.png";
+        enableHoverWhilePlaying();
+    } else {
+        video.pause();
+        btnIcon.src = "./img/play-white.svg";
+        disableHoverWhilePlaying();
+    }
+})
+
+// Also respond to native play/pause events (in case playback is controlled elsewhere)
+if (video) {
+    video.addEventListener('play', enableHoverWhilePlaying);
+    video.addEventListener('pause', disableHoverWhilePlaying);
+    video.addEventListener('ended', disableHoverWhilePlaying);
+}
+
+/* FORM */
+
+// Обработка отправки формы с AJAX (без перезагрузки страницы)
+const form = document.querySelector('form');
+
+form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const messageDiv = document.getElementById('message');
+    messageDiv.className = 'message';
+
+    const formData = new FormData(this);
+
+    try {
+        const response = await fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        });
+
+        if (response.ok) {
+            messageDiv.className = 'message success';
+            messageDiv.textContent = '✅ Данные успешно отправлены! Ожидайте этапа.';
+            form.reset();
+        } else {
+            throw new Error('Ошибка отправки');
+        }
+    } catch (error) {
+        messageDiv.className = 'message error';
+        messageDiv.textContent = '❌ Ошибка при отправке. Попробуйте снова.';
+    }
+
+    // Скрываем сообщение через 5 секунд
+    setTimeout(() => {
+        messageDiv.className = 'message';
+    }, 5000);
+});

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зона</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/weather.css">
+    <link rel="stylesheet" href="../css/news.css">
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+
+<body class="page-form">
+    <header class="header">
+        <div class="header-row">
+            <a href="../index.html">
+                <div class="header-title">
+                    <div class="header-title-img">
+                        <img src="../img/logo.svg" alt="Logo">
+                    </div>
+                    <div class="header-title-text">Зона.com</div>
+                </div>
+            </a>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="./news.html">Новости</a></li>
+                    <li><a href="./employee.html">Сотрудники</a></li>
+                    <li><a href="./zeki.html">Зеки</a></li>
+                </ul>
+            </nav>
+
+            <button class="header-btn" type="button">
+                <a href="./form.html">
+                    <div class="btn">Сесть</div>
+                </a>
+            </button>
+        </div>
+
+    </header>
+
+    <main>
+        <section>
+            <div class="container">
+                <form action="https://formspree.io/f/mjgddger" name="prison-form" method="POST" data-netlify="true"
+                    class="form">
+                    <h1 class="form-title">Введите данные</h1>
+
+                    <div class="form-line">
+                        <label for="surname">Фамилия:</label>
+                        <input type="text" id="surname" name="surname" required>
+                    </div>
+
+                    <div class="form-line">
+                        <label for="name">Имя:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-line">
+                        <label for="secondName">Отчество:</label>
+                        <input type="text" id="secondName" name="secondName">
+                    </div>
+
+                    <div class="form-line">
+                        <label for="nickname">Погоняло:</label>
+                        <input type="text" id="nickname" name="nickname" required>
+                    </div>
+
+                    <div class="form-line">
+                        <label for="cast">Каста:</label>
+                        <select name="cast" id="cast" required>
+                            <option value="">Выберите касту</option>
+                            <option value="black">«Блатные» («чёрные», положенцы, авторитеты)</option>
+                            <option value="gray">«Мужики» («серые»)</option>
+                            <option value="red">«Козлы» («красные», «активисты, суки»)</option>
+                            <option value="blue">«Петухи» («голубые», «опущенные», «обиженные»)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-line">
+                        <label for="time">Срок:</label>
+                        <select name="time" id="time" required>
+                            <option value="">Выберите срок</option>
+                            <option value="1 год">1 год</option>
+                            <option value="3 года">3 года</option>
+                            <option value="5 лет">5 лет</option>
+                            <option value="10 лет">10 лет</option>
+                            <option value="Пожизненно">Пожизненно</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="form-submit">Сесть</button>
+
+                    <div id="message" class="message"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">ООО «Зона». Все права нарушены ©</footer>
+</body>
+
+</html>

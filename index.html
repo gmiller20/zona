@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Зона</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
@@ -11,34 +11,30 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header header-h">
         <div class="header-row">
-            <div class="header-title">
-                <div class="header-title-img">
-                    <img src="./img/logo.svg" alt="Logo">
+            <a href="./index.html">
+                <div class="header-title">
+                    <div class="header-title-img">
+                        <img src="./img/logo.svg" alt="Logo">
+                    </div>
+                    <div class="header-title-text">Зона.com</div>
                 </div>
-                <div class="header-title-text">Зона.com</div>
-            </div>
-
+            </a>
             <nav class="header-nav">
                 <ul>
-                    <li><a href="#">Зеки</a></li>
-                    <li><a href="#">Пидорятня</a></li>
-                    <li><a href="#">Удобства</a></li>
+                    <li><a href="./pages/news.html">Новости</a></li>
+                    <li><a href="./pages/employee.html">Сотрудники</a></li>
+                    <li><a href="./pages/zeki.html">Зеки</a></li>
                 </ul>
             </nav>
 
-            <button class="header-btn" type="button">
-                <div class="btn">Сесть</div>
-            </button>
+            <a href="./pages/form.html" class="header-btn btn">Сесть</a>
         </div>
-    </header>
-
-    <main>
         <div class="container">
             <section>
                 <div class="card">
-                    <div class="card-img">
+                    <!-- <div class="card-img">
                         <img class="img-1" src="./img/boss.jpg" alt="Boss">
                         <img class="img-2" src="./img/boss-2.jpg" alt="Boss-2">
                     </div>
@@ -47,12 +43,25 @@
                         <div class="card-content-title">Курочко Армен Петрович</div>
                         <div class="card-content-subtitle">Начальник зоны</div>
                         <blockquote class="card-content-cit">«Всех сгною!!!»</blockquote>
+                    </div> -->
+                    <h1 class="card-title">Добро пожаловать на зону!</h1>
+                    <div class="video-container">
+                        <video src="./video/video.mp4" class="video"></video>
+                        <div class="overlay">
+                            <button class="video-button">
+                                <img src="./img/play-white.svg" alt="Play" class="btn-icon">
+                            </button>
+                        </div>
+
                     </div>
-
-
                 </div>
             </section>
         </div>
+
+    </header>
+
+    <main>
+
         <section class="app">
 
             <div class="weather">
@@ -63,7 +72,7 @@
                         </button>
                     </form> -->
                 <h1 class="app-title">Погода на зоне</h1>
-                
+
                 <div class="weather-content">
 
                     <div class="weather__info">
@@ -77,7 +86,7 @@
                             <img src="./img/weather/vlaj.svg" alt="" class="details__img">
                             <div class="weather__info-container">
                                 <div class="details__value" id="humidity">50%</div>
-                                <div class="details__title">Humidity</div>
+                                <div class="details__title">Влажность</div>
                             </div>
                         </div>
 
@@ -85,18 +94,115 @@
                             <img src="./img/weather/wind.svg" alt="" class="details__img">
                             <div class="weather__info-container">
                                 <div class="details__value" id="speed">10 km/h</div>
-                                <div class="details__title">Wind Speed</div>
+                                <div class="details__title">Скорость ветра</div>
                             </div>
 
                         </div>
                     </div>
                 </div>
 
+                <div class="weather-content-bottom">
+                    <img src="./img/weather/koj-cold.png" alt="koj" class="koj">
+                    <div class="weather-message">
+                        <div class="weather-message-hello">Товарищи чекисты!</div>
+                        <div class="weather-message-text">На улице холодно. Не забудьте надеть кожанку!</div>
+                    </div>
+                </div>
 
 
         </section>
+
+        <section>
+            <div class="container">
+                <h1 class="bio-title">Биография начальника зоны</h1>
+                <div class="bio-text">
+                    <h2>Курочко Армен Петрович. Чекист , тюремный врач , начальник тюрьмы.</h2>
+                    <div class="text-img">
+                        <p>Родился в 1990 году в семье работника фсина и с детства мечтал избивать зеков как его отец .
+                            Учился
+                            в школе крайне плохо
+                            , что было поводом для гордости в семье , ведь отец видел в сыне свое продолжение и безмерно
+                            им
+                            гордился . После школы
+                            как и полагается чекисту отслужил в армии , но во ФСИН решил пойти не обычным вертухаем , а
+                            сразу
+                            врачом , из за чего к
+                            сожалению пришлось пойти в вуз , взяв целевое направление от соответствующей организации.
+                        </p>
+
+                        <div class="bio-img-container">
+                            <img src="./img/bio-img.jpg" alt="Armen" class="bio-img">
+                        </div>
+
+                    </div>
+
+
+                    <p>В вузе учился так же плохо как и в школе аргументируя это тем что нахуя на зоне что то знать ,
+                        больше всего юноша ждал
+                        практику , которая обычно проходит в тюрьмах , где он сразу себя показал с лучшей стороны : "
+                        однажды я случайно пожал
+                        руку зеку , а потом увидел что он спидозный . Дабы не поползли обо мне слухи , я вколол петушаре
+                        литр адреналина и
+                        наблюдал за тем как у него порвалась аорта ".</p>
+
+                    <p>Еле еле закончив вуз врача сразу же определили на свой участок , чего он так долго и ждал. Придя
+                        в
+                        первый день на работу
+                        , сразу ввел новые правила как с ним общаться , не только зекам , но и работающим там врачам и
+                        сотрудникам
+                        администрации. Взял себе тревожную кнопку , которая предназначена только для баб , чтобы в любой
+                        момент можно было
+                        позвать вертухая и отправить зека в оздоровительную пидорятню. Приказал приветствовать его
+                        только с
+                        фразы здравия желаю
+                        гражданин начальник и только потом рассказывать о самочувствии.</p>
+
+                    <p>Быстрый карьерный взлет .
+                        На второй день подговорил двух зеков пачкой сигарет , дабы сместить заведующего отделения
+                        терапии с
+                        его должности , дабы
+                        занять его теплое место , ведь его зп существенно выше и составляла 25 тысяч рублей вместо 22
+                        получаемых обычным
+                        терапевтом. Курочко принял ряд реформ , вследствие чего смертность в больнице существенно
+                        снижалась:</p>
+                    <ol>
+                        <li>Пациентам отказывавшимся от терапии , врач ласково говорил :" сгною нахуй в карцере ".</li>
+                        <li>Уникальное решение сложных случаев :" у нас на зоне нету диализа и пациентов с хбп я
+                            подключал к
+                            пылесосу , там же
+                            есть фильтр и так кровь очищалась , потом включал обратный режим и закачивал их кровь им
+                            обратно ".</li>
+                        <li>Уникальная терапия у пациентов с циррозом печени различного генеза
+                            Если я видел у зека , паразита тюремной власти , цирроз на узи , я прям там датчиком его по
+                            печени и
+                            хуярил , чтоб он
+                            истек нахуй кровью и перевели его в хирургию , пусть там ебутся
+                        </li>
+                        <li>Сумел создать на зоне электрофорез</li>
+                    </ol>
+
+
+                    <p>Я приказывал вертухаям мазать их электрошокеры аскорбиновой кислотой и хуярить зекам по почкам и
+                        печени для профилактики
+                        заболеваний гераторенальной системы.</p>
+
+                    <p>Создав почти нулевую смертность в стационаре ( избивал зеков в стационаре, выписывал обратно в
+                        камеру , там они и
+                        погибали ) , врач решил возглавить больницу и по той же схеме списал глав врача и занял его
+                        место</p>
+
+                    <p>Поработав ещё несколько лет глав врачом в больнице и устав от медицины , решил возглавить уже
+                        саму
+                        тюрьму , какая была
+                        схема вы уже поняли , и сейчас Курочко Армен Петрович является начальником тюрьмы</p>
+
+                </div>
+            </div>
+        </section>
         </div>
     </main>
+
+    <footer class="footer">ООО «Зона». Все права нарушены ©</footer>
     <script src="./js/main.js"></script>
 </body>
 
