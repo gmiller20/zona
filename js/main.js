@@ -2,16 +2,16 @@ const api_key = '18b550d49ce741aa37722f6f0b88e308';
 // const form = document.querySelector('#form');
 // const input = document.querySelector('.form__input')
 const body = document.querySelector('body');
+const weatherSection = document.querySelector('.weather');
 
-body.onload = submitHandler;
+if (weatherSection) {
+    body.onload = submitHandler;
+}
+
 async function submitHandler(e) {
-    // e.preventDefault();
-    // getGeo(input.value.trim());
-    // const cityInfo = await getGeo(input.value.trim());
     const weatherInfo = await getWeather(57.155, 65.459);
     console.log(weatherInfo);
     const weatherData = {
-        // name: weatherInfo.name,
         temp: weatherInfo.main.temp,
         humidity: weatherInfo.main.humidity,
         speed: weatherInfo.wind.speed,
@@ -23,8 +23,7 @@ async function submitHandler(e) {
     const weatherMessage = document.querySelector('.weather-message-text');
     const weatherMessageImg = document.querySelector('.koj');
 
-
-    if (weatherData.temp >= 20) {
+    if (weatherData.temp >= 20 && weatherMessage && weatherMessageImg) {
         weatherMessage.innerText = 'На улице тепло. Но кожанку все равно наденьте!';
         weatherMessageImg.src = './img/weather/koj-warm.png';
     }
@@ -46,24 +45,21 @@ async function getWeather(lat, lon) {
 
 function renderWeatherData(data) {
     const temp = document.querySelector('.weather__temp');
-    // const city = document.querySelector('.weather__city');
     const humidity = document.querySelector('#humidity');
     const speed = document.querySelector('#speed');
-    const img = document.querySelector('.weather__img')
+    const img = document.querySelector('.weather__img');
 
-    temp.innerText = Math.round(data.temp) + '°c';
-    // city.innerText = data.name;
-    humidity.innerText = data.humidity + '%';
-    speed.innerText = data.speed + ' km/h';
-
+    if (temp) temp.innerText = Math.round(data.temp) + '°c';
+    if (humidity) humidity.innerText = data.humidity + '%';
+    if (speed) speed.innerText = data.speed + ' km/h';
 
     const fileNames = {
         'Clouds': 'clouds',
         'Clear': 'clear',
         'Rain': 'rain'
-    }
+    };
 
-    img.src = `./img/weather/${fileNames[data.main]}.png`;
+    if (img) img.src = `./img/weather/${fileNames[data.main]}.png`;
 }
 
 /* VIDEO */
@@ -116,18 +112,23 @@ function disableHoverWhilePlaying() {
 // Initialize: overlay visible by default (handled earlier). Ensure hover handlers are off.
 disableHoverWhilePlaying();
 
-videoButton.addEventListener('click', function () {
-
-    if (video.paused) {
-        video.play();
-        btnIcon.src = "./img/pause-white.png";
-        enableHoverWhilePlaying();
-    } else {
-        video.pause();
-        btnIcon.src = "./img/play-white.svg";
-        disableHoverWhilePlaying();
-    }
-})
+if (videoButton && video) {
+    videoButton.addEventListener('click', function () {
+        if (video.paused) {
+            video.play();
+            if (btnIcon) {
+                btnIcon.src = btnIcon.dataset.pauseSrc || "./img/pause-white.png";
+            }
+            enableHoverWhilePlaying();
+        } else {
+            video.pause();
+            if (btnIcon) {
+                btnIcon.src = btnIcon.dataset.playSrc || "./img/play-white.svg";
+            }
+            disableHoverWhilePlaying();
+        }
+    });
+}
 
 // Also respond to native play/pause events (in case playback is controlled elsewhere)
 if (video) {
@@ -141,35 +142,38 @@ if (video) {
 // Обработка отправки формы с AJAX (без перезагрузки страницы)
 const form = document.querySelector('form');
 
-form.addEventListener('submit', async function (e) {
-    e.preventDefault();
+if (form) {
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
 
-    const messageDiv = document.getElementById('message');
-    messageDiv.className = 'message';
-
-    const formData = new FormData(this);
-
-    try {
-        const response = await fetch('/', {
-            method: 'POST',
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
-        });
-
-        if (response.ok) {
-            messageDiv.className = 'message success';
-            messageDiv.textContent = '✅ Данные успешно отправлены! Ожидайте этапа.';
-            form.reset();
-        } else {
-            throw new Error('Ошибка отправки');
-        }
-    } catch (error) {
-        messageDiv.className = 'message error';
-        messageDiv.textContent = '❌ Ошибка при отправке. Попробуйте снова.';
-    }
-
-    // Скрываем сообщение через 5 секунд
-    setTimeout(() => {
+        const messageDiv = document.getElementById('message');
+        if (!messageDiv) return;
         messageDiv.className = 'message';
-    }, 5000);
-});
+
+        const formData = new FormData(this);
+
+        try {
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            });
+
+            if (response.ok) {
+                messageDiv.className = 'message success';
+                messageDiv.textContent = '✅ Данные успешно отправлены! Ожидайте этапа.';
+                form.reset();
+            } else {
+                throw new Error('Ошибка отправки');
+            }
+        } catch (error) {
+            messageDiv.className = 'message error';
+            messageDiv.textContent = '❌ Ошибка при отправке. Попробуйте снова.';
+        }
+
+        // Скрываем сообщение через 5 секунд
+        setTimeout(() => {
+            messageDiv.className = 'message';
+        }, 5000);
+    });
+}

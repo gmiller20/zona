@@ -64,6 +64,14 @@
     background: linear-gradient(120deg, #ffffff, #ffd75f 70%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-top: 100px;
+}
+
+/* Override card title size for the intro card on zeki page */
+.zeki .card .card-title {
+    font-size: clamp(2.6rem, 4.0vw, 3.6rem);
+    line-height: 1.04;
+    margin-bottom: 14px;
 }
 
 @media (max-width: 640px) {
@@ -73,5 +81,10 @@
 
     .zeki-card {
         padding: 14px;
+    }
+
+    .zeki-title {
+
+        margin-top: 50px;
     }
 }
