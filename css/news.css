@@ -28,6 +28,10 @@
     align-items: center;
 }
 
+.news-card + .news-card {
+    margin-top: 80px;
+}
+
 .news-img {
     flex: 0 0 auto;
     width: auto;
