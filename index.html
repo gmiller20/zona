@@ -11,116 +11,11 @@
 </head>
 
 <body>
-    <header class="header header-h">
-        <div class="header-row">
-            <a href="./index.html">
-                <div class="header-title">
-                    <div class="header-title-img">
-                        <img src="./img/logo.svg" alt="Logo">
-                    </div>
-                    <div class="header-title-text">Зона.com</div>
-                </div>
-            </a>
-            <nav class="header-nav">
-                <ul>
-                    <li><a href="./pages/news.html">Новости</a></li>
-                    <li><a href="./pages/employee.html">Сотрудники</a></li>
-                    <li><a href="./pages/zeki.html">Пидорятня</a></li>
-                </ul>
-            </nav>
+    <header class="header header-h" id="header"></header>
 
-            <a href="./pages/form.html" class="header-btn btn">Сесть</a>
-        </div>
-        <div class="container">
-            <section>
-                <div class="card">
-                    <!-- <div class="card-img">
-                        <img class="img-1" src="./img/boss.jpg" alt="Boss">
-                        <img class="img-2" src="./img/boss-2.jpg" alt="Boss-2">
-                    </div>
+    <main id="home">
 
-                    <div class="card-content">
-                        <div class="card-content-title">Курочко Армен Петрович</div>
-                        <div class="card-content-subtitle">Начальник зоны</div>
-                        <blockquote class="card-content-cit">«Всех сгною!!!»</blockquote>
-                    </div> -->
-                    <div class="card-left">
-                        <h1 class="card-title">Добро пожаловать на зону!</h1>
-                        <div class="gimn-container">
-                            <div class="gimn-title">Гимн зоны</div>
-                            <div class="gimn-wrap">
-                                <audio src="./audio/gimn.mp3" class="gimn" controls preload="none">
-                                    Ваш браузер не поддерживает аудио-плеер.
-                                </audio>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-container">
-                        <video src="./video/video.mp4" class="video"></video>
-                        <div class="overlay">
-                            <button class="video-button">
-                                <img src="./img/play-white.svg" alt="Play" class="btn-icon"
-                                    data-play-src="./img/play-white.svg" data-pause-src="./img/pause-white.png">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-    </header>
-
-    <main>
-
-        <section class="app">
-
-            <div class="weather">
-                <!-- <form action="" class="form" id="form">
-                        <input type="text" class="form__input" placeholder="Enter city name">
-                        <button class="form__btn">
-                            <img src="./img/weather/search-line.svg" alt="Search">
-                        </button>
-                    </form> -->
-                <h1 class="app-title">Погода на зоне</h1>
-
-                <div class="weather-content">
-
-                    <div class="weather__info">
-                        <img src="./img/weather/drizzle.png" alt="Weather" class="weather__img">
-                        <div class="weather__temp">22°c</div>
-                        <!-- <div class="weather__city">Moscow</div> -->
-                    </div>
-
-                    <div class="weather-details-container">
-                        <div class="weather__details">
-                            <img src="./img/weather/vlaj.svg" alt="" class="details__img">
-                            <div class="weather__info-container">
-                                <div class="details__value" id="humidity">50%</div>
-                                <div class="details__title">Влажность</div>
-                            </div>
-                        </div>
-
-                        <div class="weather__details">
-                            <img src="./img/weather/wind.svg" alt="" class="details__img">
-                            <div class="weather__info-container">
-                                <div class="details__value" id="speed">10 km/h</div>
-                                <div class="details__title">Скорость ветра</div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="weather-content-bottom">
-                    <img src="./img/weather/koj-cold.png" alt="koj" class="koj">
-                    <div class="weather-message">
-                        <div class="weather-message-hello">Товарищи чекисты!</div>
-                        <div class="weather-message-text">На улице холодно. Не забудьте надеть кожанку!</div>
-                    </div>
-                </div>
-
-
-        </section>
+        <section class="app" id="weather-widget"></section>
 
         <section>
             <div class="container">
@@ -212,8 +107,8 @@
         </div>
     </main>
 
-    <footer class="footer">ООО «Зона». Все права нарушены ©</footer>
-    <script src="./js/main.js"></script>
+    <footer id="footer" class="footer"></footer>
+    <script type="module" src="./js/main1.js"></script>
 </body>
 
 </html>
